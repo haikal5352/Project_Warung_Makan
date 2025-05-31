@@ -26,7 +26,7 @@
             @foreach(\App\Models\Menu::where('is_available', true)->limit(6)->get() as $menu)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col" data-aos="flip-left" data-aos-delay="{{ $loop->index * 100 }}">
                     @if($menu->image)
-                        <img src="{{ asset('storage/'.$menu->image) }}" alt="{{ $menu->name }}" class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/'.$menu->image) }}" alt="{{ $menu->name }}" class="w-full h-48 object-cover">
                     @else
                         <div class="w-full h-48 bg-gray-200"></div>
                     @endif

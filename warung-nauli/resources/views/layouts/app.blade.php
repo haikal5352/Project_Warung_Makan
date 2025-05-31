@@ -16,7 +16,7 @@
   {{-- Navbar --}}
   <nav class="bg-yellow-300 shadow">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="{{ route('landing') }}" class="text-2xl font-bold">Nauli</a>
+      <a href="{{ route('landing') }}" class="text-2xl font-bold">Warung Nauli</a>
       <div class="space-x-4">
         <a href="{{ route('landing') }}" class="hover:underline">Home</a>
         <a href="{{ route('menu.index') }}" class="hover:underline">Menu</a>

@@ -28,7 +28,7 @@
         <td>{{ $menu->description }}</td>
         <td>
           @if($menu->image)
-            <img src="{{ asset('storage/'.$menu->image) }}" width="80">
+            <img src="{{ asset('images/'.$menu->image) }}" width="80">
           @endif
         </td>
         <td>

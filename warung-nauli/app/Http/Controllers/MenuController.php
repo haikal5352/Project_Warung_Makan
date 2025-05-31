@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
+    // Public menu listing
+    public function publicIndex()
+    {
+        $menus = Menu::where('is_available', true)->get();
+        return view('menu.index', compact('menus'));
+    }
+
+    // Admin menu listing
     public function index()
     {
         $menus = Menu::all();
@@ -34,7 +42,7 @@ class MenuController extends Controller
 
         Menu::create($data);
 
-        return redirect()->route('menus.index')->with('success', 'Menu ditambahkan');
+        return redirect()->route('menus.index')->with('success', 'Menu berhasil ditambahkan');
     }
 
     public function edit(Menu $menu)
@@ -58,13 +66,13 @@ class MenuController extends Controller
 
         $menu->update($data);
 
-        return redirect()->route('menus.index')->with('success', 'Menu diupdate');
+        return redirect()->route('menus.index')->with('success', 'Menu berhasil diupdate');
     }
 
     public function destroy(Menu $menu)
     {
         $menu->delete();
-        return back()->with('success', 'Menu dihapus');
+        return redirect()->route('menus.index')->with('success', 'Menu berhasil dihapus');
     }
 }
 
